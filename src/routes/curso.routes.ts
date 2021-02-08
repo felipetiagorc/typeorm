@@ -1,8 +1,7 @@
 import { Router } from 'express';
-import { getCustomRepository, getRepository, Like } from 'typeorm';
+import { getCustomRepository, getRepository } from 'typeorm';
 import Curso from '../models/Curso';
 import CursoRepository from '../repositories/CursoRepository';
-import Repository from '../repositories/CursoRepository';
 
 const cursoRouter = Router();
 
@@ -14,6 +13,7 @@ cursoRouter.post('/', async (request, response) => {
   } catch (err) {
     console.log('err.mensagem:>>', err.message);
   }
+  return null;
 });
 
 cursoRouter.get('/', async (req, res) => {
